@@ -6,16 +6,15 @@ with open("GenEdList.json", encoding="utf-8") as fp:
 
 
 def SubjectTypeMap(thName: str):
-    if thName == "กลุ่มสาระอยู่ดีมีสุข":
-        return "Wellness"
-    elif thName == "กลุ่มสาระศาสตร์แห่งผู้ประกอบการ":
-        return "Entrepreneurship"
-    elif thName == "กลุ่มสาระภาษากับการสื่อสาร":
-        return "Language and Communication"
-    elif thName == "กลุ่มสาระพลเมืองไทยและพลเมืองโลก":
-        return "Thai Citizen and Global Citizen"
-    elif thName == "กลุ่มสาระสุนทรียศาสตร์":
-        return "Aesthetics"
+    th_to_en = {
+        "กลุ่มสาระอยู่ดีมีสุข": "Wellness",
+        "กลุ่มสาระศาสตร์แห่งผู้ประกอบการ": "Entrepreneurship",
+        "กลุ่มสาระภาษากับการสื่อสาร": "Language and Communication",
+        "กลุ่มสาระพลเมืองไทยและพลเมืองโลก": "Thai Citizen and Global Citizen",
+        "กลุ่มสาระสุนทรียศาสตร์": "Aesthetics",
+    }
+    if thName in th_to_en.keys():
+        return th_to_en[thName]
     else:
         return "NOT_GENED"
 
